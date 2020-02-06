@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+mycli = "*"
+
+[packages]
+flask = "*"
+peewee = "*"
+pymysql = "*"
+aiohttp = "*"
+
+[requires]
+python_version = "3.6"
+
+[scripts]
+pep8 = "autopep8 -riv --max-line-length 120 app.py"
+create_tables = 'python -c "from app import create_tables; create_tables()"'
+drop_tables = 'python -c "from app import drop_tables; drop_tables()"'
+mycli = 'mycli $DATABASE_URL'
